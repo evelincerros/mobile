@@ -20,7 +20,7 @@ const User = mongoose.model("User", userSchema);
 
 // Route to test server is running
 app.get("/", (req, res) => {
-  res.send("Server is running.");
+  res.send("Hi.");
 });
 
 // Registration route
@@ -77,10 +77,7 @@ app.post("/login", async (req, res) => {
 
 // Connect to MongoDB
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("Connected to MongoDB");
 
